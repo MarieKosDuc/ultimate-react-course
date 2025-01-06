@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <Bill onBillInput={setBill}/>
+      <Bill bill={bill} onBillInput={setBill}/>
       <Tips onTipChange={(tip) => calculateTotalTip(tip, 1)} reset={reset}>How did you like the service? </Tips>
       <Tips onTipChange={(tip) => calculateTotalTip(tip, 2)} reset={reset}>How did your friend like the service? </Tips>
       <Sum totalSum={totalSum} bill={bill} totalTips={totalTipsAmout}/>
