@@ -1,10 +1,12 @@
 import AccordionItem from "./AccordionItem"
+import { useState } from "react";
 
 export default function Accordion({data}) {
+    const [curOpen, setCurOpen] = useState(null);
 
     return <div className="accordion">
             {data.map((el, index) => (
-                 <AccordionItem title={el.title} text={el.text} number={index} key={el.title} />
+                 <AccordionItem curOpen={curOpen} onOpen={setCurOpen} title={el.title} number={index} key={el.title}>{el.text}</AccordionItem> 
             ))} 
         </div>
 }
